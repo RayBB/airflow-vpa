@@ -17,7 +17,7 @@ Have the VPA (Vertical Pod Autoscaler) assign resource requests based on previou
 -   The targetRef only needs to provide a [ScaleStatus](https://v1-16.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/#scalestatus-v1-autoscaling).
 	-   A ScaleStatus has two fields:
 		-   replicas (integer) - number of observed instances of the scaled object.
-		-   selector (string) - a label selector (such as the one set by Airflow)
+		-   selector (string) - a label selector (such as the one set by Airflow).
 -   To my knowledge, there is no native Kubernetes controller that allows you to add instances of pods to it, as would be needed when pods are deployed from the KubernetesPodOperator.
 -   As such, we cannot use the VPA for Airflow tasks.
     
@@ -62,7 +62,7 @@ Cons
 	-   If deployed manually, it could be a lot to maintain.
 	-   If deployed by airflow when dags run:
 		1.  Requires adding code to each dag or adding some Airflow abstraction.
-			-   Could automatically be deployed as some part of CI/CD
+	-   Could automatically be deployed as some part of CI/CD
 -   In a moderately complex form, you could have a controller that also deploys a VPA.
 	-   Just like above but this controller would also create a VPA that scales this controller.
 -   In a complex form, you could have a controller for your custom controllers
@@ -81,7 +81,7 @@ Pros
 -   There may be more use cases for this feature that others would benefit from
 -   Would make using VPAs for pods from Airflow trivial
 -   If the maintainers of the VPA don’t like this feature a fork could be made
--   But this would require a lot of maintenance and be more confusing
+    -   This would require a lot of maintenance and be more confusing
 
 Cons
 -   Maintainers removed this feature once before and may feel strongly about the decision
@@ -121,6 +121,7 @@ Pros
 -   Installation would likely be straightforward
 -   Does not require any changes to the VPA codebase
 -   Seems to be a lightweight solution
+
 Cons
 -   Feels hacky
 	-   The VPA would only be able to use the history of the first instance of a task
