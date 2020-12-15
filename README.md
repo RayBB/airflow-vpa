@@ -129,7 +129,17 @@ Cons
 -   Would require the creation of a custom pod admission webhook
 	-   Difficulty unknown
 -   May need another process to clean up VPA for tasks not seen in a long time?
-    
+
+## Contributing
+
+If you have any ideas on how to implement this feel free to open an issue here or in any of the relevant projects.
+
+## Current Discussions
+
+- [Metacontroller issue on if this is a good use case](https://github.com/metacontroller/metacontroller/issues/123)
+- [Kubernetes VPA issue on if they will support this](https://github.com/kubernetes/autoscaler/issues/3766)
+- Is it feasible to use the Vertical Pod Autoscaler with Airflow on a task level? On SO [here](https://stackoverflow.com/questions/65187194/is-it-feasible-to-use-the-vertical-pod-autoscaler-with-airflow-on-a-task-level)
+- Private email thread with GCP support on potential solutions
 
 ## Resources
 
@@ -141,8 +151,8 @@ Related Tools
 -   [Metacontroller](https://metacontroller.github.io/metacontroller/)
 -   [KubernetesJobOperator](https://github.com/LamaAni/KubernetesJobOperator)
 
-Conversations
--   Is it feasible to use the Vertical Pod Autoscaler with Airflow on a task level? On SO [here](https://stackoverflow.com/questions/65187194/is-it-feasible-to-use-the-vertical-pod-autoscaler-with-airflow-on-a-task-level)
+### Past Conversations
+
 -   Asking about using Metacontroller in Kubernetes Slack [here](https://kubernetes.slack.com/archives/CA0SUPUDP/p1607488872129000)
 -   Asking if a VPA can use a service in Kubernetes Slack [here](https://kubernetes.slack.com/archives/C09R1LV8S/p1607475076397700)
 -   Is the VPA designed to work with batch jobs? Kubernetes Slack [here](https://kubernetes.slack.com/archives/C09R1LV8S/p1607503512419200)
